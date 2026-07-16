@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Attendance Report</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📊 Attendance Report</h1>
+
+{% for item in report %}
+
+<div class="report-card">
+
+<h2>{{ item.event }}</h2>
+
+<p><b>Total Registrations :</b> {{ item.total }}</p>
+
+<p><b>Total Attendees :</b> {{ item.present }}</p>
+
+<p><b>Attendance Percentage :</b> {{ item.percentage }}%</p>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>department</th>
+<th>Check In Time</th>
+<th>Status</th>
+
+</tr>
+
+{% for row in item.rows %}
+
+<tr>
+
+<td>{{ row[1] }}</td>
+
+<td>{{ row[2] }}</td>
+
+<td>{{ row[3] }}</td>
+
+<td>{{ row[4] }}</td>
+
+<td>{{ row[5] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+</div>
+
+{% endfor %}
+
+<div class="action-buttons">
+
+<a href="/export" class="btn">
+📥 Download CSV
+</a>
+
+<a href="/" class="btn">
+🏠 Home
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

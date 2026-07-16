@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Successful</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎉 Registration Successful</h1>
+
+    <p>Your QR Code has been generated.</p>
+
+    <br>
+
+    <img src="{{ qr_path }}" width="250">
+
+    <br><br>
+
+    <a href="/" class="btn">🏠 Home</a>
+
+</div>
+
+</body>
+</html>

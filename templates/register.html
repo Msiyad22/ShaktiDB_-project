@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register Participant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>👤 Register Participant</h1>
+
+    <form method="POST" class="form-box">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter participant name"
+                   required>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter email"
+                   required>
+        </div>
+        
+	<div class="form-group">
+		<label>Department</label>
+	    	<input type="text"
+	           name="department"
+	           placeholder="Enter Department"
+	           required>
+	</div>
+	
+        <div class="form-group">
+            <label>Select Event</label>
+            <select name="event_id" required>
+                {% for event in events %}
+                <option value="{{ event[0] }}">
+                    {{ event[1] }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button type="submit" class="btn">
+            ✅ Register Participant
+        </button>
+
+    </form>
+
+    <a href="/" class="btn home-btn">
+        🏠 Home
+    </a>
+
+</div>
+
+</body>
+</html>

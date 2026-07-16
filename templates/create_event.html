@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Event</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Create New Event</h1>
+
+<form method="POST">
+
+<label>Event Name</label>
+<input type="text" name="name" required>
+
+<label>Event Date</label>
+<input type="date" name="date" required>
+
+<label>Venue</label>
+<input type="text" name="venue" required>
+
+<button type="submit">
+📅 Create Event
+</button>
+
+</form>
+
+<a href="/" class="btn home-btn">🏠 Home</a>
+</div>
+
+</body>
+</html>
